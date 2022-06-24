@@ -1,38 +1,74 @@
-*{
-    padding: 0;
-    margin: 0;
+#button {
+    width: 300px;
+    height: 100px;
+    background-color: green;
+    cursor: pointer;
+    position: relative;
+    left: 500px;
 }
-#game {
-    width: 500px;
+
+
+.game {
+    width: 600px;
     height: 200px;
     border: 1px solid black;
+    margin: auto;
+    background-image: url(img/sunset.png);
+    background-size: 600px 200px;
 }
-#character{
-    width: 20px;
+
+#llama {
+    width: 50px;
     height: 50px;
-    background-color: red;
+    background-image: url(img/Llama.png);
+    background-size: 50px 50px;
     position: relative;
-    top: 150px;
+    top: 110px;
 }
-.animate{
-    animation: jump 500ms;
+
+.jump {
+    animation: jump 0.3s linear;
 }
-@keyframes jump{
-    0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+
+@keyframes jump {
+    0% {
+        top: 110px;
+    }
+    30% {
+        top: 90px;
+    }
+    50% {
+        top: 40px;
+    }
+    80% {
+        top: 90px;
+    }
+    100% {
+        top: 110px;
+    }
 }
-#block{
+
+#mochi {
     width: 20px;
-    height: 20px;
-    background-color: blue;
+    height: 40px;
     position: relative;
-    top: 130px;
-    left: 480px;
+    top: 70px;
+    left: 580px; 
+
+    background-image: url(img/mochi.png);
+    background-size: 20px 40px;
+}
+
+.block {
     animation: block 1s infinite linear;
 }
-@keyframes block{
-    0%{left:480px;}
-    100%{left:-40px;}
-}
+
+@keyframes block {
+    0% {
+        left: 580px;
+    }
+
+    100% {
+        left: -20px;
+    }
+} /* zorgt voor de animatie van de mochi en laat het van rechts naar links gaan */
