@@ -1,8 +1,7 @@
 const llama = document.getElementById("llama");
 const mochi = document.getElementById("mochi");
 const start = document.getElementById("button");
-var timer = new Date().getTime(),
-  score = '0.1';
+const pauze = document.getElementById("pauze");
 
 
 start.addEventListener("click", () => {
@@ -10,20 +9,9 @@ start.addEventListener("click", () => {
     
 });
 
-var interval = window.setInterval(function() {
-    var time = new Date().getTime() - timer;
-    
-    score = Math.floor(time / 1000);
-    
-    if(score === 100) { 
-      window.clearInterval(interval); 
-      if(!alert("You win!\nPress 'OK' to play again")){
-          window.location.reload();
-      } 
-    }
-  
-    document.getElementById('displayScore').innerHTML = score += '.00 Score';
-  });
+pauze.addEventListener("click", function() {
+    mochi.classList.remove("block");
+})
 
 
 //geeft de jump class aan de llama zodat die springt
