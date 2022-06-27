@@ -4,6 +4,7 @@ const start = document.getElementById("button");
 const pauze = document.getElementById("pauze");
 
 
+
 start.addEventListener("click", () => {
     mochi.classList.add("block");
     
@@ -12,6 +13,7 @@ start.addEventListener("click", () => {
 pauze.addEventListener("click", function() {
     mochi.classList.remove("block");
 })
+
 
 
 //geeft de jump class aan de llama zodat die springt
@@ -39,11 +41,19 @@ let isAlive = setInterval(function () {
         //botsing
         mochi.classList.remove("block");
        alert ("Game Over");
+       document.getElementById("score").innerHTML = score = 0;
        
     }
 
 }, 10);
 
-document.addEventListener("keydown", function (event){
-    jump();
+
+
+document.addEventListener("keydown", function(e){
+    var score = parseInt(document.getElementById("score").innerHTML);
+    score++;
+    document.getElementById("score").innerHTML = score;
+    if(e.keyCode == 32){
+        jump()
+    }
 })
