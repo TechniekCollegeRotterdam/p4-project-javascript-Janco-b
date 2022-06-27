@@ -2,16 +2,24 @@ const llama = document.getElementById("llama");
 const mochi = document.getElementById("mochi");
 const start = document.getElementById("button");
 const pauze = document.getElementById("pauze");
+var paused = document.getElementById("paused");
 
 
 
 start.addEventListener("click", () => {
     mochi.classList.add("block");
+    start.classList.add("transparant");
+    start.classList.remove("button");
+    paused.classList.add("transparant");
     
 });
 
 pauze.addEventListener("click", function() {
     mochi.classList.remove("block");
+    start.classList.remove("transparant");
+    start.classList.add("button");
+    paused.classList.remove("transparant")
+
 })
 
 
@@ -42,6 +50,8 @@ let isAlive = setInterval(function () {
         mochi.classList.remove("block");
        alert ("Game Over");
        document.getElementById("score").innerHTML = score = 0;
+       start.classList.remove("transparant");
+       start.classList.add("button");
        
     }
 
